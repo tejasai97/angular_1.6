@@ -1,13 +1,6 @@
 var myNinjaApp = angular.module('myNinjaApp',[]);
 
-//before app starts
-myNinjaApp().config(function(){
-
-});
-
-//when the app starts
-myNinjaApp.run(function(){
-
-});
-
-myNinjaApp.controller
+myNinjaApp.controller('NinjaController',['$scope',function($scope){
+  $scope.message = "hello world";
+  $scope.ninjas = ['yoshi','crystal','ryu','john'];
+}]);
