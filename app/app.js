@@ -13,7 +13,7 @@ myNinjaApp.config(['$routeProvider', function($routeProvider){
     });
 }]);
 
-myNinjaApp.controller('NinjaController',['$scope',function($scope){
+myNinjaApp.controller('NinjaController',['$scope','$http',function($scope,$http){
 
   $scope.removeNinja= function(ninja){
     var removedNinja = $scope.ninjas.indexOf(ninja);
@@ -32,42 +32,18 @@ myNinjaApp.controller('NinjaController',['$scope',function($scope){
     $scope.newninja.belt = "";
     $scope.newninja.rate = "";
   };
+/*  $http.get('data/ninjas.json').then(function(success,data){
+    $scope.ninjas=data;
+  }); */
+  $http.get('data/ninjas.json').then(successCallback, errorCallback);
 
-  $scope.ninjas = [
-    {
-      name:"teja",
-      belt:"green",
-      rate: 50,
-      available:true,
-      thumb:"content/img/deadpool.png"
-    },
-    {
-      name:"sai",
-      belt:"black",
-      rate: 30,
-      available:true,
-      thumb:"content/img/batman.png"
-    },
-    {
-      name:"kumar",
-      belt:"yellow",
-      rate: 10,
-      available:true,
-      thumb:"content/img/flash.png"
-    },
-    {
-      name:"sravan",
-      belt:"red",
-      rate: 150,
-      available:true,
-      thumb:"content/img/spiderman.png"
-    },
-    {
-      name:"rohan",
-      belt:"orange",
-      rate: 1500,
-      available:true,
-      thumb:"content/img/superman.png"
-    },
-  ];
+function successCallback(response){
+    //success code
+    //console.log(response.data);
+    $scope.ninjas=response.data;
+}
+function errorCallback(error){
+    //error code
+    console.log('error occured during retreiving data');
+}
 }]);
