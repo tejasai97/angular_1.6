@@ -25,31 +25,36 @@ myNinjaApp.controller('NinjaController',['$scope',function($scope){
       name:"teja",
       belt:"green",
       rate: 50,
-      available:true
+      available:true,
+      thumb:"content/img/deadpool.png"
     },
     {
       name:"sai",
       belt:"black",
       rate: 30,
-      available:true
+      available:true,
+      thumb:"content/img/batman.png"
     },
     {
       name:"kumar",
       belt:"yellow",
       rate: 10,
-      available:true
+      available:true,
+      thumb:"content/img/flash.png"
     },
     {
       name:"sravan",
       belt:"red",
       rate: 150,
-      available:true
+      available:true,
+      thumb:"content/img/spiderman.png"
     },
     {
       name:"rohan",
       belt:"orange",
       rate: 1500,
-      available:true
+      available:true,
+      thumb:"content/img/superman.png"
     },
   ];
 }]);
