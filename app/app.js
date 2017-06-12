@@ -6,22 +6,26 @@ myNinjaApp.controller('NinjaController',['$scope',function($scope){
     {
       name:"teja",
       belt:"green",
-      rate: 50
+      rate: 50,
+      available:true
     },
     {
       name:"sai",
       belt:"black",
-      rate: 30
+      rate: 30,
+      available:true
     },
     {
       name:"kumar",
       belt:"yellow",
-      rate: 10
+      rate: 10,
+      available:false
     },
     {
       name:"sravan",
       belt:"red",
-      rate: 150
+      rate: 150,
+      available:true
     }
   ];
 }]);
