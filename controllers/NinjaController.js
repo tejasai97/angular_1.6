@@ -1,4 +1,4 @@
-var NinjaController =angular.module('NinjaController',['ngRoute','ngAnimate']);
+var NinjaController =angular.module('NinjaController',[]);
 NinjaController.controller('NinjaController',['$scope','$http',function($scope,$http){
 
   $scope.removeNinja= function(ninja){
