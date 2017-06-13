@@ -53,6 +53,11 @@ myNinjaApp.controller('NinjaController',['$scope','$http',function($scope,$http)
 /*  $http.get('data/ninjas.json').then(function(success,data){
     $scope.ninjas=data;
   }); */
+
+  $scope.removeAll =function(){
+    $scope.ninjas=[];
+  };
+
   $http.get('data/ninjas.json').then(successCallback, errorCallback);
 
 function successCallback(response){
