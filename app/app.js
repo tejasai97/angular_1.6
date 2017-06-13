@@ -7,7 +7,12 @@ myNinjaApp.config(['$routeProvider', function($routeProvider){
       controller:'NinjaController'
     })
     .when('/contact',{
-      templateUrl:'views/contact.html'
+      templateUrl:'views/contact.html',
+      controller:'contactController'
+    })
+    .when('/contact-success',{
+      templateUrl:'views/contact-success.html',
+      controller:'contactController'
     })
     .when('/directory',{
       templateUrl:'views/directory.html',
@@ -72,4 +77,10 @@ function errorCallback(error){
     //error code
     console.log('error occured during retreiving data');
 }
+}]);
+
+myNinjaApp.controller('contactController',['$scope','$location',function($scope,$location){
+  $scope.sendMessage =function(){
+    $location.path('contact-success');
+  };
 }]);
